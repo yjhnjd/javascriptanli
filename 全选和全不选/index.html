@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<script type="text/javascript">
+			window.onload=function(){
+				var btn=document.getElementsByTagName('button');
+				var ipt=document.getElementsByTagName('input');
+				btn[0].onclick=function(){
+					for (var i=0;i<ipt.length;i++) {
+						ipt[i].checked=true;
+					}
+				}
+				btn[1].onclick=function(){
+					for (var i=0;i<ipt.length;i++) {
+						ipt[i].checked=false;
+					}
+				}
+				btn[2].onclick=function(){
+					for (var i=0;i<ipt.length;i++) {
+						if(ipt[i].checked==true){
+							ipt[i].checked=false;
+						}
+						else{
+							ipt[i].checked=true;
+						}
+					}
+				}
+			}
+		</script>
+	</head>
+	<body>
+		<button>全选</button>
+		<button>取选</button>
+		<button>反选</button><br />
+		篮球<input type="checkbox" name="happy" /><br />
+		篮球<input type="checkbox" name="happy" /><br />
+		篮球<input type="checkbox" name="happy" /><br />
+		篮球<input type="checkbox" name="happy" /><br />
+		篮球<input type="checkbox" name="happy" /><br />
+	</body>
+</html>

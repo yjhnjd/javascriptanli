@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			* {
+				margin: 0;
+				padding: 0;
+				text-decoration: none;
+				color: black;
+			}
+			
+			.header {
+				width: 100%;
+				height: 60px;
+				background: #CCCCCC;
+			}
+			
+			.header .contianer {
+				width: 1000px;
+				height: 60px;
+				margin: 0 auto;
+				background: deeppink;
+			}
+			
+			.header .contianer a {
+				float: left;
+				width: 200px;
+				height: 100%;
+				text-align: center;
+				line-height: 60px;
+			}
+			
+			.header .contianer a.active {
+				background: #6495ED;
+			}
+			
+			.header .contianer a:hover {
+				background: #6495ED;
+			}
+			/*头部结束*/
+			/*身体开始*/
+			
+			.body {
+				width: 100%;
+				height: 200px;
+				background: #7FFFD4;
+			}
+			
+			.body .item {
+				width: 100%;
+				height: 200px;
+				display: none;
+			}
+		</style>
+		<script type="text/javascript">
+			window.onload = function() {
+				var links = document.getElementsByTagName('a');
+				var items = document.getElementsByClassName('item');
+				for(i = 0; i < links.length; i++) {
+					(function(i) {
+						links[i].onclick = function() {
+							//排他思想，先把所有的样式都设置为none，displa都为none
+							for(j = 0; j < links.length; j++) {
+								links[j].className = '';
+								items[j].style.display = "none";
+							}
+							links[i].className = 'active';
+							items[i].style.display = "block";
+						}
+					})(i);
+				}
+			}
+		</script>
+	</head>
+
+	<body>
+		<!--头部开始-->
+		<div class="header">
+			<div class="contianer">
+				<a href="#" class="active">首页</a>
+				<a href="#">首页</a>
+				<a href="#">首页</a>
+				<a href="#">首页</a>
+				<a href="#">首页</a>
+			</div>
+		</div>
+		<!--头部结束-->
+		<div class="body">
+			<div class="item" style="display: block;">
+				111111111
+			</div>
+			<div class="item">
+				22222222222
+			</div>
+			<div class="item">
+				33333333
+			</div>
+			<div class="item">
+				4444444444
+			</div>
+			<div class="item">
+				555555555555
+			</div>
+		</div>
+	</body>
+
+</html>

@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style>
+			div {
+				width: 400px;
+				height: 80px;
+				margin: 150px auto;
+			}
+			
+			input,
+			label,
+			span {
+				float: left;
+			}
+			
+			input {
+				height: 15px;
+				width: 180px;
+			}
+			
+			span {
+				width: 140px;
+				background: #ccc;
+				height: 22px;
+				line-height: 20px;
+				font-size: 14px;
+				text-indent: 1em;
+			}
+			
+			.wrong {
+				color: red;
+				background: url(img/info-circle.png) no-repeat 0px #FFDCD0;
+			}
+			
+			.right {
+				background-color: whitesmoke;
+				background: url(img/check-circle.png) no-repeat 0px #DFFFDF;
+			}
+		</style>
+		<script type="text/javascript">
+			window.onload = function() {
+				var input = document.getElementsByTagName('input');
+				var span = document.getElementsByTagName('span');
+				input[0].onblur = function() {
+					var val = input[0].value;
+					if(!val) {
+						span[0].innerHTML = "不能为空"
+						span[0].setAttribute('class', 'wrong');
+					} else if(val < 0 || val > 150) {
+						span[0].innerHTML = "请输入正确的范围"
+						span[0].setAttribute('class', 'wrong');
+					} else if(isNaN(Number(val))) {
+						span[0].innerHTML = "请输入数字"
+						span[0].setAttribute('class', 'wrong');
+					} else {
+						span[0].innerHTML = "输入正确"
+						span[0].setAttribute('class', 'right');
+					}
+				}
+			}
+		</script>
+	</head>
+
+	<body>
+		<div>
+			<label>高数：</label>
+			<input type="text" name="chengji" id="" />
+			<span>请输入数字</span>
+		</div>
+	</body>
+
+</html>

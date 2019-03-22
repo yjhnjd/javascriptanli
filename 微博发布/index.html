@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			div{
+				width: 500px;
+				background: antiquewhite;
+				height: 500px;
+			}
+			span{
+				vertical-align: top;
+			}
+		</style>
+		<script type="text/javascript">
+			window.onload = function() {
+				var tet=document.getElementsByTagName('textarea')[0];
+				var btn=document.getElementsByTagName('button')[0];
+				var div=document.getElementsByTagName('div')[0];
+				btn.onclick=function(){
+					var val=tet.value;
+//					if(!val){
+//						tet.innerHTML='消息不能为空';
+//					}
+//					else{
+						div.innerHTML+='张三：'+val+"<br>";
+//						val='';
+						console.log(val);
+						tet.value='';
+//						console.log(val='');
+//					}
+				}
+			}
+		</script>
+	</head>
+
+	<body>
+			<span>张三</span>
+			<textarea></textarea>
+			<button>提交</button>
+		<div>
+			
+		</div>
+	</body>
+
+</html>

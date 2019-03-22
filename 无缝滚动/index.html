@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style>
+			* {
+				margin: 0;
+				padding: 0;
+			}
+			
+			.box {
+				width: 600px;
+				height: 200px;
+				margin: 40px auto;
+				background-color: pink;
+				position: relative;
+				overflow: hidden;
+				border: 1px solid red;
+			}
+			.box:hover{
+				cursor: pointer;
+			}
+			.box ul {
+				position: absolute;
+				list-style: none;
+				top: 0;
+				left: 0;
+				width: 400%;
+			}
+			
+			.box ul li {
+				float: left;
+			}
+			
+			img {
+				float: left;
+			}
+		</style>
+		<script type="text/javascript">
+			window.onload = function() {
+				var ul = document.getElementsByTagName('ul')[0];
+				var div = document.getElementById('box');
+				var num=0;
+				var move=function(){
+						if (num>-1200) {
+							num--;
+							ul.style.left=num+'px';
+						} else{
+							num=0;
+						}
+						
+					}
+				var timer=setInterval(move,2);
+				ul.onmouseover=function(){
+					clearInterval(timer);
+				}
+				ul.onmouseout=function(){
+					timer=setInterval(move,2);
+				}
+			}
+		</script>
+	</head>
+
+	<body>
+		<div class="box" id="box">
+			<ul>
+				<li><img src="img/01.jpg" /></li>
+				<li><img src="img/02.jpg" /></li>
+				<li><img src="img/03.jpg" /></li>
+				<li><img src="img/04.jpg" /></li>
+				<!--利用人眼视觉停留缺点，来实现无缝滚动-->
+				<li><img src="img/01.jpg" /></li>
+				<li><img src="img/02.jpg" /></li>
+			</ul>
+		</div>
+	</body>
+
+</html>

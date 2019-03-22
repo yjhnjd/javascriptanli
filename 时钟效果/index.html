@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			.clock {
+				width: 600px;
+				height: 600px;
+				margin: 0 auto;
+				background: url(img/clock.jpg) no-repeat center center;
+				position: relative;
+			}
+			
+			.clock div {
+				width: 600px;
+				height: 600px;
+				position: absolute;
+				top: 0;
+				left: 0;
+			}
+			
+			.hour {
+				background: url(img/hour.png) no-repeat center center;
+			}
+			
+			.minute {
+				background: url(img/minute.png) no-repeat center center;
+			}
+			
+			.second {
+				background: url(img/second.png) no-repeat center center;
+			}
+		</style>
+		<script type="text/javascript">
+			window.onload = function() {
+				function clock() {
+					var hourzheng = document.getElementsByClassName('hour')[0];
+					var minutezheng = document.getElementsByClassName('minute')[0];
+					var secondzheng = document.getElementsByClassName('second')[0];
+					var date = new Date();
+					var second = date.getSeconds();
+//					console.log(second);
+					var minute = date.getMinutes() + second / 60;
+					var hour = date.getHours() % 12 + minute / 60;
+					hourzheng.style.transform = "rotate(" + hour * 30 + "deg)"
+					minutezheng.style.transform = "rotate(" + minute * 6 + "deg)"
+					secondzheng.style.transform = "rotate(" + second * 6 + "deg)"
+				}
+				setInterval(clock, 1000);
+			}
+		</script>
+	</head>
+
+	<body>
+		<div class="clock">
+			<div class="hour">
+
+			</div>
+			<div class="minute">
+
+			</div>
+			<div class="second">
+
+			</div>
+		</div>
+	</body>
+
+</html>
